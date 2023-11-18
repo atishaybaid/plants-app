@@ -4,16 +4,20 @@ import PlantCard from "./PlantCard";
 
 const PlantList = () => {
   const [plantListData, setPlantListData] = useState([]);
+  const [plantListIsLoading,setPlantListIsLoading] = useState(false);
   useEffect(() => {
+    setPlantListIsLoading(true)
     fetchData(
       "https://my-json-server.typicode.com/atishaybaid/dummyApi/plantsList"
     )
       .then((data) => {
         console.log("data");
         setPlantListData(data);
+        setPlantListIsLoading(false)
       })
       .catch((error) => {
         console.error("Error appeared while getting the data");
+        setPlantListIsLoading(false)
       });
   }, []);
   const renderPlantList = () => {
