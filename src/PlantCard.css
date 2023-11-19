@@ -1,20 +1,25 @@
-.plant-card{
+.plant-card {
     display: flex;
     border: 1px solid;
     padding: 10px;
 }
 
-.plant-title{
+.plant-title {
     font-size: 25px;
     font-weight: 500;
     text-decoration: underline;
     padding-bottom: 10px;
 }
 
-.plant-detail{
+.plant-detail {
     display: flex;
     align-items: center;
     padding: 30px;
     font-family: sans-serif;
 
+}
+
+
+.plant-card:hover {
+    cursor: pointer;
 }
