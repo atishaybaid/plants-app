@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { fetchData } from "./Services/fetchData";
 
 
-const PlantDetail = ({ apiKey:""}) => {
+const PlantDetail = ({ apiKey }) => {
     const [plantDetailData, setPlantData] = useState({});
+    console.log("apiKey");
+    console.log(apiKey);
     useEffect(() => {
         fetchData(
             `https://my-json-server.typicode.com/atishaybaid/dummyApi/${apiKey}`
@@ -26,3 +29,6 @@ const PlantDetail = ({ apiKey:""}) => {
 
 
 }
+
+
+export default PlantDetail;

@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "./Services/fetchData";
 import PlantCard from "./PlantCard";
+import PlantDetail from "./PlantDetail";
 import Modal from 'react-modal';
 
 const PlantList = () => {
   const [plantListData, setPlantListData] = useState([]);
   const [plantListIsLoading, setPlantListIsLoading] = useState(false);
   const [isDetailsModalOpen, setIsDetailModalOpen] = useState(false);
+  const [selectedPlant, setSelectedPLant] = useState("");
 
   useEffect(() => {
     setPlantListIsLoading(true)
@@ -14,7 +16,7 @@ const PlantList = () => {
       "https://my-json-server.typicode.com/atishaybaid/dummyApi/plantsList"
     )
       .then((data) => {
-        console.log("data");
+
         setPlantListData(data);
         setPlantListIsLoading(false)
       })
@@ -36,22 +38,25 @@ const PlantList = () => {
         onRequestClose={closeModal}
       >
 
-        <div>I am a modal</div>
+        <PlantDetail apiKey={selectedPlant} />
 
       </Modal>
     )
   }
-  const openModal = () => {
+  const openModal = (apiKey) => {
+
+    setSelectedPLant(apiKey);
     setIsDetailModalOpen(true);
+
   }
 
 
 
   const renderPlantList = () => {
     return (
-      <ul onClick={openModal}>
+      <ul>
         {plantListData.map((plant) => (
-          <PlantCard plant={plant} key={plant.id} />
+          <PlantCard plant={plant} key={plant.id} openModalClbck={openModal} />
 
         ))}
       </ul>
@@ -59,7 +64,7 @@ const PlantList = () => {
   };
 
   return <div>{renderPlantList()}
-    {renderDetailsModal()}
+    {isDetailsModalOpen ? renderDetailsModal() : null}
 
   </div>;
 };

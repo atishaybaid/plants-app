@@ -1,12 +1,18 @@
 import { getImagePath } from "./utils";
-import  './PlantCard.css';
+import './PlantCard.css';
 
-const PlantCard = ({ plant }) => {
+const PlantCard = ({ plant, openModalClbck }) => {
   return (
-    <div className="plant-card">
-     
+    <div className="plant-card" onClick={
+      () => {
+        openModalClbck(plant.key)
+      }
+
+
+    } >
+
       <div className="plantImage">
-      <div className="plant-title">{plant.plantName}</div>
+        <div className="plant-title">{plant.plantName}</div>
         <img
           src={getImagePath(plant.plantName)}
           //src={rubberPlant}
@@ -19,7 +25,7 @@ const PlantCard = ({ plant }) => {
         <p>{plant.description}</p>
       </div>
       {/* <PlantActions id={id} /> */}
-    </div>
+    </div >
   );
 };
 
