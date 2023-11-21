@@ -5,6 +5,10 @@ import PlantDetail from "./PlantDetail";
 import Loader from "./Loader";
 import Modal from 'react-modal';
 
+const plantListDataPromise = fetchData(
+  "https://my-json-server.typicode.com/atishaybaid/dummyApi/plantsList"
+)
+
 const PlantList = () => {
   const [plantListData, setPlantListData] = useState([]);
   const [plantListIsLoading, setPlantListIsLoading] = useState(false);
@@ -13,14 +17,12 @@ const PlantList = () => {
 
   useEffect(() => {
     setPlantListIsLoading(true)
-    fetchData(
-      "https://my-json-server.typicode.com/atishaybaid/dummyApi/plantsList"
-    )
-      .then((data) => {
 
-        setPlantListData(data);
-        setPlantListIsLoading(false)
-      })
+    plantListDataPromise.then((data) => {
+
+      setPlantListData(data);
+      setPlantListIsLoading(false)
+    })
       .catch((error) => {
         console.error("Error appeared while getting the data");
         setPlantListIsLoading(false)

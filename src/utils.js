@@ -5,6 +5,7 @@ import grass from "./assests/grass.jpeg";
 import ajvian from "./assests/ajwain.jpg";
 import tusli from "./assests/holyBasil.jpeg";
 
+
 export const getImagePath = (plantName = "") => {
   switch (plantName) {
     case "Rubber Plant": {
@@ -31,3 +32,7 @@ export const getImagePath = (plantName = "") => {
     }
   }
 };
+
+
+
+
