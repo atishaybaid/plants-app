@@ -1,14 +1,14 @@
 import logo from "./logo.svg";
 import PlantList from "./PlantList";
 import { Suspense } from "react";
-import Loading from "./Loading";
+import Loader from "./Loader";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <div className="plant-list-container">
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loader />}>
           <PlantList />
         </Suspense>
       </div>
