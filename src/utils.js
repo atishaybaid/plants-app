@@ -33,6 +33,8 @@ export const getImagePath = (plantName = "") => {
 };
 
 
+
+
 function wrapPromise(promise) {
   let status = 'pending'
   let response
@@ -51,7 +53,7 @@ function wrapPromise(promise) {
   const read = () => {
     switch (status) {
       case 'pending':
-        throw suspender
+        throw promise
       case 'error':
         throw response
       default:
@@ -68,4 +70,7 @@ export const fetchData = (url) => {
 
   return wrapPromise(promise)
 }
+
+
+
 
