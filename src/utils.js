@@ -53,7 +53,7 @@ function wrapPromise(promise) {
   const read = () => {
     switch (status) {
       case 'pending':
-        throw promise
+        throw suspender
       case 'error':
         throw response
       default:

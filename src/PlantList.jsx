@@ -7,12 +7,13 @@ import Modal from 'react-modal';
 import { fetchData } from "./utils";
 
 const listData = fetchData("https://my-json-server.typicode.com/atishaybaid/dummyApi/plantsList");
-// const listData = new Promise(() => {
-
-// })
 
 console.log("listData");
 console.log(listData);
+/*
+- inside PlantList we do not render any loading state
+
+*/
 
 const PlantList = () => {
   const plantListData = listData.read();
