@@ -8,9 +8,7 @@ function App() {
   return (
     <div className="App">
       <div className="plant-list-container">
-        <Suspense fallback={<Loading />}>
-          <PlantList />
-        </Suspense>
+        <PlantList />
       </div>
     </div>
   );
