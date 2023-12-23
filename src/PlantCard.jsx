@@ -1,20 +1,24 @@
 import { getImagePath } from "./utils";
-
+import  './PlantCard.css';
 
 const PlantCard = ({ plant }) => {
   return (
-    <div>
+    <div className="plant-card">
+     
       <div className="plantImage">
+      <div className="plant-title">{plant.plantName}</div>
         <img
           src={getImagePath(plant.plantName)}
           //src={rubberPlant}
           width={500}
           height={500}
-         alt=""
+          alt=""
         />
       </div>
+      <div className="plant-detail">
+        <p>{plant.description}</p>
+      </div>
       {/* <PlantActions id={id} /> */}
-      <div className="plantDetail">{plant.plantName}</div>
     </div>
   );
 };

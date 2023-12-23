@@ -13,13 +13,13 @@ export const getImagePath = (plantName = "") => {
     case "Croton": {
       return crotonPlant;
     }
-    case "Arica Palm": {
+    case "Areca Palm": {
       return arecaPalm;
     }
     case "Grass": {
       return grass;
     }
-    case "Ajvian": {
+    case "Ajwian": {
       return ajvian;
     }
     case "Tulsi": {
