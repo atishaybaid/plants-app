@@ -1,0 +1,41 @@
+.option-item {
+    display: flex;
+    min-height: 32px;
+    line-height: 22px;
+    align-items: center;
+}
+
+.option-item:hover {
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+
+.select-container {
+    position: relative;
+    display: flex;
+    width: 200px;
+    padding: 10px;
+}
+
+.option-list {
+    position: absolute;
+    max-height: 200px;
+    overflow: scroll;
+    top: 45px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.08) 2px 2px 2px 2px;
+    z-index: 1050;
+    padding: 4px;
+    width: 192px;
+
+}
+
+.select-input {
+    width: 200px;
+    height: 30px;
+}

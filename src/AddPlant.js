@@ -1,6 +1,7 @@
 import FormInput from "./components/FormInput"
 import Button from "./components/Button";
 import FileUpload from "./components/FileInput";
+import Select from "./components/Select";
 import { useRef } from "react";
 
 const AddPlant = ({ }) => {
@@ -8,6 +9,29 @@ const AddPlant = ({ }) => {
     const wateringNotificationRef = useRef(false);
     const caringNotificationRef = useRef(false);
     const plantImageFileUploadRef = useRef(false);
+
+    const dummyOptions = [
+        { label: "Rosaceae", value: "Rosaceae" },
+        { label: "Lamiaceae", value: "Lamiaceae" },
+        { label: "Fabaceae", value: "Fabaceae" },
+        { label: "Asteraceae", value: "Asteraceae" },
+        { label: "Poaceae", value: "Poaceae" },
+        { label: "Orchidaceae", value: "Orchidaceae" },
+        { label: "Solanaceae", value: "Solanaceae" },
+        { label: "Cactaceae", value: "Cactaceae" },
+        { label: "Brassicaceae", value: "Brassicaceae" },
+        { label: "Ericaceae", value: "Ericaceae" },
+        { label: "Liliaceae", value: "Liliaceae" },
+        { label: "Rutaceae", value: "Rutaceae" },
+        { label: "Cyperaceae", value: "Cyperaceae" },
+        { label: "Apiaceae", value: "Apiaceae" },
+        { label: "Myrtaceae", value: "Myrtaceae" },
+        { label: "Gesneriaceae", value: "Gesneriaceae" },
+        { label: "Bromeliaceae", value: "Bromeliaceae" },
+        { label: "Araceae", value: "Araceae" },
+        { label: "Fagaceae", value: "Fagaceae" },
+        { label: "Cucurbitaceae", value: "Cucurbitaceae" }
+    ]
 
 
     const onClickAddPlant = (event) => {
@@ -27,6 +51,7 @@ const AddPlant = ({ }) => {
 
 
 
+
         //@todo:api->call api
         console.log(addPlantPostData);
         console.log(plantImageFileUploadRef.current.files[0])
@@ -39,7 +64,8 @@ const AddPlant = ({ }) => {
         <FormInput type="checkbox" label="Watering Notification" name="wateringNotification" ref={wateringNotificationRef} />
         <FormInput type="checkbox" label="Caring Notification" name="caringNotification" ref={caringNotificationRef} />
         <FileUpload label="Upload Plant Image" name="plantImage" ref={plantImageFileUploadRef} />
-        <Button label="Save Plant" onClick={onClickAddPlant}></Button>
+        <Select options={dummyOptions} placeholder="Select Plant Family" />
+        <Button label="Save Plant" onClick={onClickAddPlant} ></Button>
     </form>
 
     )
