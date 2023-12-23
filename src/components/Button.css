@@ -1,0 +1,7 @@
+.primary-btn {
+    width: 100px;
+}
+
+.primary-btn:hover {
+    cursor: pointer;
+}
