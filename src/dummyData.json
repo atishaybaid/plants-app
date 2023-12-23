@@ -7,7 +7,7 @@
             "imgURL": "",
             "description": "The Rubber Plant, Ficus elastica, stands out with its striking large, glossy, dark green leaves, lending an elegant touch to indoor spaces. To ensure its well-being, place it in bright, indirect light, avoiding direct sun to prevent leaf damage. Maintain soil moisture by allowing the top layer to dry between waterings, preventing root rot. Moderate to high humidity levels suit this plant, achieved through occasional misting or a humidifier, while consistent temperatures without sudden fluctuations are ideal. Regular pruning helps manage its size and promote new growth, and keeping an eye out for pests like spider mites and mealybugs ensures its health. Remember, it's toxic to pets if ingested, so position it away from curious furry friends. Adhering to these care measures will maintain the Rubber Plant's stunning appearance and robust growth indoors.",
             "careTips": "Provide your rubber plant with bright, indirect light, allowing the top inch of soil to dry between waterings to prevent overwatering and root rot. Moderate to high humidity levels are beneficial, but it adapts to average household conditions. Ensure well-draining soil and occasional pruning to maintain its shape and size. Watch for pests like spider mites and mealybugs, wiping the leaves periodically. Keep it away from direct drafts and cold temperatures. Remember, it's toxic to pets if ingested, so place it out of their reach. With this care routine, your rubber plant should thrive beautifully indoors.",
-            "key": ""
+            "key": "rubberPlantDetail"
         },
         {
             "id": 2,
@@ -15,6 +15,7 @@
             "indoor": 1,
             "outdoor": 1,
             "imgURL": 1,
+            "key": "crotonPlantDetail",
             "description": "Croton plants (Codiaeum variegatum) are known for their vibrant and multicolored foliage, displaying a stunning array of red, orange, yellow, and green leaves. They thrive in bright, indirect sunlight, requiring well-draining soil to avoid waterlogging. Keep the soil consistently moist but not soggy. Crotons prefer warm temperatures and benefit from occasional misting to provide moderate humidity levels. Watch for spider mites and scale insects, as they can be prone to infestations. Regular pruning helps maintain their compact and bushy appearance."
         },
         {
@@ -23,6 +24,7 @@
             "indoor": 1,
             "outdoor": 1,
             "imgURL": "",
+            "key": "arecaPalmDetail",
             "description": "Areca palms (Dypsis lutescens) are elegant and graceful indoor palms with feathery, arching fronds that add a tropical touch to any space. They do well in bright, indirect light but can tolerate lower light conditions. Keep the soil consistently moist but not waterlogged, ensuring adequate drainage. Areca palms appreciate higher humidity levels, so occasional misting or using a humidifier is beneficial, especially in drier climates. Regularly remove any brown or yellowing fronds to maintain its appearance."
         },
         {
@@ -31,6 +33,7 @@
             "indoor": 0,
             "outdoor": 1,
             "imgURL": "",
+            "key": "grassDetail",
             "description": "Home grasses, also known as ornamental grasses, come in various species, providing lush greenery indoors. They generally thrive in bright, indirect sunlight and well-draining soil, allowing the top layer to dry out between waterings. Regular trimming or grooming helps maintain their shape and prevent them from becoming untidy. These grasses can benefit from occasional fertilization during the growing season to promote healthy growth and vibrant foliage."
         },
         {
@@ -39,6 +42,7 @@
             "indoor": 0,
             "outdoor": 1,
             "imgURL": "",
+            "key": "ajwainPlantDeatil",
             "description": "Ajwain, or Carom, is an aromatic herb known for its pungent, distinctive taste and medicinal properties. It thrives in full sunlight and well-draining soil, allowing the top layer to dry out between waterings. Ajwain plants prefer warm temperatures and can tolerate slightly cooler conditions. Regular harvesting encourages growth and prevents the plant from becoming leggy. They are relatively low-maintenance but benefit from occasional fertilization to enhance growth."
         },
         {
@@ -47,8 +51,176 @@
             "indoor": 0,
             "outdoor": 1,
             "imgURL": "",
+            "key": "holyBasilDetail",
             "description": "Holy Basil, or Tulsi, is a revered herb in many cultures for its religious significance and medicinal properties. It prefers full sunlight and well-draining soil, allowing the top layer to dry between waterings. Regular pruning encourages bushier growth and prevents it from becoming leggy. Holy Basil plants are relatively low-maintenance but benefit from occasional organic fertilization. They can be sensitive to cold temperatures, so protect them from drafts during cooler months."
         }
     ],
-    "rubberPlantDetail": {}
+    "rubberPlantDetail": {
+        "species_detail": {
+            "scientific_name": "Ficus elastica",
+            "native_to": "Southeast Asia",
+            "family": "Moraceae"
+        },
+        "common_name": "Rubber Plant",
+        "caring_tips": {
+            "light": "Bright, indirect light; avoid direct sunlight",
+            "temperature": "60-80°F (15-27°C)",
+            "soil": "Well-draining soil mix",
+            "humidity": "Higher humidity preferred but can adapt to household levels",
+            "pruning": "Regular pruning to maintain shape",
+            "fertilization": "Balanced liquid fertilizer in growing season"
+        },
+        "watering_frequency": {
+            "guidelines": "Allow top inch of soil to dry between waterings",
+            "frequency": "Thorough watering when needed, reduce in winter"
+        },
+        "indoor_outdoor": "Primarily grown indoors as a houseplant; can be outdoors in warm climates with protection from direct sun",
+        "common_reasons_for_failure": [
+            "Overwatering leading to root rot",
+            "Insufficient light causing leggy growth or leaf drop",
+            "Extreme temperatures or drafts causing stress",
+            "Pest infestations like mealybugs, scale, or spider mites",
+            "Poor drainage in soil leading to root problems"
+        ]
+    },
+    "ajwainPlantDeatil": {
+        "species_detail": {
+            "scientific_name": "Aswan",
+            "native_to": "Egypt",
+            "family": "Arecaceae"
+        },
+        "common_name": "Aswan",
+        "caring_tips": {
+            "light": "Full sun to partial shade",
+            "temperature": "70-90°F (21-32°C)",
+            "soil": "Well-draining soil",
+            "humidity": "Prefers moderate to high humidity",
+            "pruning": "Regular removal of dead or damaged leaves",
+            "fertilization": "Fertilize every 2-4 weeks during growing season"
+        },
+        "watering_frequency": {
+            "guidelines": "Allow top inch of soil to dry before watering",
+            "frequency": "Water thoroughly, but allow excess water to drain"
+        },
+        "indoor_outdoor": "Can be grown indoors or outdoors in warm climates",
+        "common_reasons_for_failure": [
+            "Overwatering causing root rot",
+            "Insufficient light leading to weak growth",
+            "Extreme temperatures or drafts causing stress",
+            "Lack of proper drainage in soil",
+            "Pests like scale insects or spider mites"
+        ]
+    },
+    "arecaPalmDetail": {
+        "species_detail": {
+            "scientific_name": "Dypsis lutescens",
+            "native_to": "Madagascar",
+            "family": "Arecaceae"
+        },
+        "common_name": "Areca Palm",
+        "caring_tips": {
+            "light": "Bright, indirect light; can tolerate some direct sunlight",
+            "temperature": "65-75°F (18-24°C)",
+            "soil": "Well-draining potting mix",
+            "humidity": "Prefers high humidity",
+            "pruning": "Remove yellow or browning fronds",
+            "fertilization": "Fertilize every 2-4 weeks during growing season"
+        },
+        "watering_frequency": {
+            "guidelines": "Keep soil consistently moist but not waterlogged",
+            "frequency": "Water more frequently in warmer months, reduce in winter"
+        },
+        "indoor_outdoor": "Primarily an indoor plant, can be placed outdoors in shade",
+        "common_reasons_for_failure": [
+            "Overwatering causing root rot",
+            "Insufficient humidity causing browning of leaf tips",
+            "Too much direct sunlight leading to leaf scorch",
+            "Pests like spider mites or mealybugs",
+            "Improper drainage causing root issues"
+        ]
+    },
+    "crotonPlantDetail": {
+        "species_detail": {
+            "scientific_name": "Codiaeum variegatum",
+            "native_to": "Malaysia, Indonesia, Pacific Islands",
+            "family": "Euphorbiaceae"
+        },
+        "common_name": "Croton Plant",
+        "caring_tips": {
+            "light": "Bright, indirect light; can tolerate some direct sunlight",
+            "temperature": "65-85°F (18-29°C)",
+            "soil": "Well-draining soil mix",
+            "humidity": "Prefers moderate to high humidity",
+            "pruning": "Regular pruning to maintain shape and remove leggy growth",
+            "fertilization": "Fertilize every 2-4 weeks during growing season"
+        },
+        "watering_frequency": {
+            "guidelines": "Allow the top inch of soil to dry between waterings",
+            "frequency": "Water thoroughly when needed, reduce in winter"
+        },
+        "indoor_outdoor": "Primarily grown as an indoor plant",
+        "common_reasons_for_failure": [
+            "Overwatering causing root rot",
+            "Insufficient light leading to leaf drop",
+            "Extreme temperatures causing stress",
+            "Pests like spider mites or mealybugs",
+            "Improper drainage causing root issues"
+        ]
+    },
+    "grassDetail": {
+        "species_detail": {
+            "scientific_name": "Various",
+            "native_to": "Varies based on species",
+            "family": "Varies based on species"
+        },
+        "common_name": "Grass",
+        "caring_tips": {
+            "light": "Varies based on species; most prefer full sun",
+            "temperature": "Varies based on species",
+            "soil": "Well-draining soil",
+            "humidity": "Varies based on species; most tolerate average humidity",
+            "pruning": "Mowing or trimming for maintenance",
+            "fertilization": "Fertilize based on grass type and season"
+        },
+        "watering_frequency": {
+            "guidelines": "Varies based on species; most need consistent moisture",
+            "frequency": "Water deeply but infrequently to encourage deep root growth"
+        },
+        "indoor_outdoor": "Most commonly outdoor plants in lawns or landscapes",
+        "common_reasons_for_failure": [
+            "Inadequate watering causing wilting or browning",
+            "Lack of sunlight affecting growth",
+            "Pests or diseases specific to grass type",
+            "Improper mowing or maintenance practices",
+            "Soil issues like compaction or poor drainage"
+        ]
+    },
+    "holyBasilDetail": {
+        "species_detail": {
+            "scientific_name": "Ocimum tenuiflorum",
+            "native_to": "India, Southeast Asia",
+            "family": "Lamiaceae"
+        },
+        "common_name": "Holy Basil",
+        "caring_tips": {
+            "light": "Full sun to partial shade",
+            "temperature": "65-90°F (18-32°C)",
+            "soil": "Well-draining, fertile soil",
+            "humidity": "Prefers moderate humidity",
+            "pruning": "Pinch off flowers to encourage leaf growth",
+            "fertilization": "Fertilize monthly during growing season"
+        },
+        "watering_frequency": {
+            "guidelines": "Keep soil consistently moist but not waterlogged",
+            "frequency": "Water when the top inch of soil is dry"
+        },
+        "indoor_outdoor": "Primarily grown outdoors but can be cultivated indoors",
+        "common_reasons_for_failure": [
+            "Overwatering causing root rot",
+            "Inadequate sunlight leading to leggy growth",
+            "Extreme temperatures or drafts causing stress",
+            "Pests like aphids or spider mites",
+            "Poor soil drainage affecting root health"
+        ]
+    }
 }
