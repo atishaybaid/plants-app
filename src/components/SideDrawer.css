@@ -1,0 +1,36 @@
+.side-drawer {
+    position: fixed;
+    width: 500px;
+    height: 100vh;
+    z-index: 1000;
+    background-color: white;
+    top: 0;
+    right: -500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    transition: all 0.3s ease;
+
+}
+
+.back-drop {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.side-drawer.open {
+    right: 0;
+}
+
+/* .main-content {
+    width: 40%;
+    height: 100vh;
+    z-index: 1000;
+    background-color: white;
+    transition: width 5s;
+} */
