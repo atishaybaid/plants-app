@@ -6,6 +6,7 @@ import "./App.css";
 import AppHeader from "./AppHeader";
 //@todo:atishay -> Make this a absolute  
 import SideDrawer from "./components/SideDrawer";
+import AddPlant from "./AddPlant.js"
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <h1>
           Side Drawer will be rendered
         </h1>
+        <AddPlant />
 
 
       </SideDrawer>
