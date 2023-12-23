@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchData } from "./Services/fetchData";
 import PlantCard from "./PlantCard";
 import PlantDetail from "./PlantDetail";
+import Loader from "./Loader";
 import Modal from 'react-modal';
 
 const PlantList = () => {
@@ -53,6 +54,9 @@ const PlantList = () => {
 
 
   const renderPlantList = () => {
+    if (plantListIsLoading) {
+      return (<Loader />)
+    }
     return (
       <ul>
         {plantListData.map((plant) => (

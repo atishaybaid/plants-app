@@ -1,28 +1,33 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "./Services/fetchData";
 import './PlantCard.css';
+import Loader from "./Loader";
 
 
 
 const PlantDetail = ({ apiKey }) => {
     const [plantDetailData, setPlantData] = useState({});
+    const [isPlantDetailLoading, setIsPlantDetailLoading] = useState(false)
     console.log("apiKey");
     console.log(apiKey);
     useEffect(() => {
+        setIsPlantDetailLoading(true)
         fetchData(
             `https://demo0778073.mockable.io/${apiKey}`
         )
             .then((data) => {
                 setPlantData(data);
+                setIsPlantDetailLoading(false)
 
             })
             .catch((error) => {
+                setIsPlantDetailLoading(false)
                 console.error("Error appeared while getting the data");
             });
     }, [])
 
     const { species_detail: speciesDetail, caring_tips: caringTips, watering_frequency: wateringFrequency, common_reasons_for_failure: commonReasonsForFailure, common_name = "" } = plantDetailData;
-    return (<div className="container">
+    return (!isPlantDetailLoading ? <div className="container">
         <h1>{common_name} Details</h1>
         <div className="details">
             <h2>Species Detail</h2>
@@ -54,7 +59,7 @@ const PlantDetail = ({ apiKey }) => {
                     ))}
                 </ul> : null}
         </div>
-    </div>
+    </div> : <Loader />
 
 
 
