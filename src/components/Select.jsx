@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 import "./Select.css";
+import VirtualizedList from "./VirtualizedList.jsx";
 
 const Select = ({ options = [], onSelect = () => { }, placeholder = "Select..." }) => {
     const [isOptionListOpen, setOptionListOpen] = useState(false);
@@ -20,9 +21,9 @@ const Select = ({ options = [], onSelect = () => { }, placeholder = "Select..." 
     }
 
     useEffect(() => {
-        const elms = [inputRef.current, labelRef.current]
+        const elms = [inputRef, labelRef]
         window.addEventListener("click", (event) => {
-            console.log(event.target);
+
             // const condition = elms.every((elm) => {
             //     event.target != elm;
             // });
@@ -32,7 +33,11 @@ const Select = ({ options = [], onSelect = () => { }, placeholder = "Select..." 
             //     setOptionListOpen(false);
             // }
 
-            if (elms[0] != event.target && elms[1] != event.target) {
+            if (elms[0].current != event.target && elms[1].current != event.target) {
+                console.log("on click also called");
+                console.log(event.target);
+                console.log("elm ref");
+                console.log(elms[1]);
                 setOptionListOpen(false);
             }
 
@@ -50,18 +55,41 @@ const Select = ({ options = [], onSelect = () => { }, placeholder = "Select..." 
     }, [])
 
     const renderOptionList = () => {
-        return options.map((optionItem) => {
+        // return options.map((optionItem) => {
+        //     let selectedClass = "";
+        //     if (isOptionSelected()) {
+        //         selectedClass = optionItem.label == selectedItem.label ? "selected-item" : "";
+        //     }
+        //     return (<div className={"option-item " + selectedClass} onClick={(event) => {
+        //         // event.stopPropagation();
+        //         onClickOption(optionItem)
+        //     }}>
+        //         {optionItem.label}
+        //     </div >)
+        // })
+        const Row = (props) => {
+            console.log("row props");
+            console.log(props)
+            const { item } = props;
+
             let selectedClass = "";
             if (isOptionSelected()) {
-                selectedClass = optionItem.label == selectedItem.label ? "selected-item" : "";
+                selectedClass = item.label == selectedItem.label ? "selected-item" : "";
             }
+
             return (<div className={"option-item " + selectedClass} onClick={(event) => {
                 // event.stopPropagation();
-                onClickOption(optionItem)
+                onClickOption(item)
             }}>
-                {optionItem.label}
+                {item.label}
             </div >)
-        })
+        }
+
+        return (
+            <VirtualizedList listData={options}>
+                {Row}
+            </VirtualizedList>
+        )
     }
 
     const onChangeInputBox = (event) => {
@@ -82,18 +110,11 @@ const Select = ({ options = [], onSelect = () => { }, placeholder = "Select..." 
 
     }
 
-    const getInputValueToDisaply = () => {
-        if (inputValue) {
-            return inputValue;
-        }
 
-        if (isOptionSelected()) {
-            return selectedItem.label;
-        }
-        return ""
-    }
     const onClickSelectedLabelBox = () => {
         inputRef.current.focus();
+        setOptionListOpen(true);
+
     }
     const isLabelVisible = () => {
         if (inputValue || !isOptionSelected()) {
@@ -108,6 +129,9 @@ const Select = ({ options = [], onSelect = () => { }, placeholder = "Select..." 
         setOptionListOpen(true);
         event.stopPropagation();
     }
+
+    console.log("is list open");
+    console.log(isOptionListOpen);
 
 
 
@@ -141,6 +165,7 @@ Next
 fix select behaviour with span
 hide the label when input value is changed
     - stop propogation of the on click event
+    - learn the behaviour of event targer
 
 */
 
