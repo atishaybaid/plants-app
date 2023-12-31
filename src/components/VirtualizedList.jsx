@@ -19,21 +19,29 @@ What all props
 */
 
 
-const VirtualizedList = ({ listData = [], windowSize = 10, children }) => {
+const VirtualizedList = ({ listData = [], windowSize = 10, children, elementSize = "32" }) => {
     const [scrollTop, setScrollTop] = useState(0);
-    const startIndex = 0;
+    const [startIndex, setStartIndex] = useState(0);
     const endIndex = listData.length;
+    console.log("children");
+    console.log(children);
 
     const renderElement = () => {
         const items = [];
-        for (var i = 0; i < endIndex; i++) {
+        for (var i = startIndex; i < startIndex + windowSize; i++) {
 
             const elm = createElement(
                 children,
                 {
                     item: listData[i],
-                    index: i
-                }
+                    index: i,
+                    style: {
+                        position: "absolute",
+                        left: "0px",
+                        top: `${i * 32}px`
+                    }
+                },
+                'hello'
             )
             items.push(elm);
         }
@@ -44,10 +52,45 @@ const VirtualizedList = ({ listData = [], windowSize = 10, children }) => {
 
     }
 
+    const getContainerHeight = () => {
+        return `${windowSize * 32}px`;
+    }
+
+    const getListHeight = () => {
+        return `${listData.length * 32}px`
+    }
+
+    const calculateStartIndex = (scrollTop = 0) => {
+        const startIndex = Math.floor(scrollTop / elementSize);
+        setStartIndex(startIndex)
+        console.log("startIndex");
+        console.log(startIndex);
+
+    }
+
+    const onScrollList = (event) => {
+        const { scrollTop } = event.currentTarget;
+
+        console.log("onScrollList called");
+        console.log(scrollTop);
+
+        calculateStartIndex(scrollTop)
+    }
 
 
 
-    return renderElement();
+    return (<div className="virtualized-list" style={{
+        'height': getContainerHeight(),
+        'overflow': 'scroll',
+        'position': 'relative',
+    }} onScroll={onScrollList}>
+        <div style={{
+            'height': getListHeight()
+        }}>
+            {renderElement()}
+        </div>
+
+    </div >)
 
 
 

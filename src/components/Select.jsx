@@ -70,14 +70,14 @@ const Select = ({ options = [], onSelect = () => { }, placeholder = "Select..." 
         const Row = (props) => {
             console.log("row props");
             console.log(props)
-            const { item } = props;
+            const { item, style } = props;
 
             let selectedClass = "";
             if (isOptionSelected()) {
                 selectedClass = item.label == selectedItem.label ? "selected-item" : "";
             }
 
-            return (<div className={"option-item " + selectedClass} onClick={(event) => {
+            return (<div className={"option-item " + selectedClass} style={style} onClick={(event) => {
                 // event.stopPropagation();
                 onClickOption(item)
             }}>

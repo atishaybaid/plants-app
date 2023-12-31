@@ -15,8 +15,8 @@
 /*option list is positoned absolute to parent container */
 .option-list {
     position: absolute;
-    max-height: 200px;
-    overflow: scroll;
+    /* max-height: 200px;
+    overflow: scroll; */
     top: 45px;
     background-color: rgb(255, 255, 255);
     border-bottom-left-radius: 8px;
@@ -51,7 +51,7 @@
 
 
 
-
+/* Styling for lable which is placed inside the input box  */
 
 .selected-label {
     position: absolute;

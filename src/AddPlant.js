@@ -10,6 +10,58 @@ const AddPlant = ({ }) => {
     const caringNotificationRef = useRef(false);
     const plantImageFileUploadRef = useRef(false);
 
+    const additionalPlantFamilies = [
+        { label: "Malvaceae", value: "Malvaceae" },
+        { label: "Cyperaceae", value: "Cyperaceae" },
+        { label: "Arecaceae", value: "Arecaceae" },
+        { label: "Boraginaceae", value: "Boraginaceae" },
+        { label: "Campanulaceae", value: "Campanulaceae" },
+        { label: "Crassulaceae", value: "Crassulaceae" },
+        { label: "Cyperaceae", value: "Cyperaceae" },
+        { label: "Euphorbiaceae", value: "Euphorbiaceae" },
+        { label: "Gentianaceae", value: "Gentianaceae" },
+        { label: "Iridaceae", value: "Iridaceae" },
+        { label: "Juncaceae", value: "Juncaceae" },
+        { label: "Lythraceae", value: "Lythraceae" },
+        { label: "Magnoliaceae", value: "Magnoliaceae" },
+        { label: "Melastomataceae", value: "Melastomataceae" },
+        { label: "Moraceae", value: "Moraceae" },
+        { label: "Myristicaceae", value: "Myristicaceae" },
+        { label: "Oleaceae", value: "Oleaceae" },
+        { label: "Onagraceae", value: "Onagraceae" },
+        { label: "Oxalidaceae", value: "Oxalidaceae" },
+        { label: "Piperaceae", value: "Piperaceae" },
+        { label: "Plantaginaceae", value: "Plantaginaceae" },
+        { label: "Polygonaceae", value: "Polygonaceae" },
+        { label: "Primulaceae", value: "Primulaceae" },
+        { label: "Ranunculaceae", value: "Ranunculaceae" },
+        { label: "Sapindaceae", value: "Sapindaceae" },
+        { label: "Scrophulariaceae", value: "Scrophulariaceae" },
+        { label: "Theaceae", value: "Theaceae" },
+        { label: "Verbenaceae", value: "Verbenaceae" },
+        { label: "Violaceae", value: "Violaceae" },
+        { label: "Amaranthaceae", value: "Amaranthaceae" },
+        { label: "Asphodelaceae", value: "Asphodelaceae" },
+        { label: "Balsaminaceae", value: "Balsaminaceae" },
+        { label: "Caryophyllaceae", value: "Caryophyllaceae" },
+        { label: "Clusiaceae", value: "Clusiaceae" },
+        { label: "Droseraceae", value: "Droseraceae" },
+        { label: "Elaeagnaceae", value: "Elaeagnaceae" },
+        { label: "Ginkgoaceae", value: "Ginkgoaceae" },
+        { label: "Haloragaceae", value: "Haloragaceae" },
+        { label: "Juglandaceae", value: "Juglandaceae" },
+        { label: "Malpighiaceae", value: "Malpighiaceae" },
+        { label: "Meliaceae", value: "Meliaceae" },
+        { label: "Menispermaceae", value: "Menispermaceae" },
+        { label: "Rhamnaceae", value: "Rhamnaceae" },
+        { label: "Rosaceae", value: "Rosaceae" },
+        { label: "Salicaceae", value: "Salicaceae" },
+        { label: "Thymelaeaceae", value: "Thymelaeaceae" },
+        { label: "Typhaceae", value: "Typhaceae" },
+        { label: "Urticaceae", value: "Urticaceae" },
+        { label: "Zingiberaceae", value: "Zingiberaceae" }
+    ];
+
     const dummyOptions = [
         { label: "Rosaceae", value: "Rosaceae" },
         { label: "Lamiaceae", value: "Lamiaceae" },
@@ -30,8 +82,12 @@ const AddPlant = ({ }) => {
         { label: "Bromeliaceae", value: "Bromeliaceae" },
         { label: "Araceae", value: "Araceae" },
         { label: "Fagaceae", value: "Fagaceae" },
-        { label: "Cucurbitaceae", value: "Cucurbitaceae" }
+        { label: "Cucurbitaceae", value: "Cucurbitaceae" },
+        ...additionalPlantFamilies
     ]
+
+
+
 
 
     const onClickAddPlant = (event) => {
