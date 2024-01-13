@@ -4,6 +4,10 @@ import arecaPalm from "./assests/arecaPalm.jpeg";
 import grass from "./assests/grass.jpeg";
 import ajvian from "./assests/ajwain.jpg";
 import tusli from "./assests/holyBasil.jpeg";
+// icons
+
+import leftArrow from "./assests/left-arrow.png";
+import rightArrow from "./assests/right-arrow.png"
 
 export const getImagePath = (plantName = "") => {
   switch (plantName) {
@@ -31,3 +35,19 @@ export const getImagePath = (plantName = "") => {
     }
   }
 };
+
+
+export const getIcons = (iconName = "") => {
+  switch (iconName) {
+    case "left-arrow": {
+      return leftArrow;
+
+    }
+
+    case "right-arrow": {
+      return rightArrow;
+
+    }
+  }
+
+}

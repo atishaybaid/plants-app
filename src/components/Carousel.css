@@ -1,0 +1,33 @@
+.carousel-wrapper {
+    display: flex;
+    width: 500px;
+    overflow: scroll;
+    position: relative;
+
+}
+
+.carousel-item {
+    padding: 10px;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+
+.slide-icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 250px;
+}
+
+
+.left-icon {
+    left: 20px;
+}
+
+.right-icon {
+    right: 0px;
+}
