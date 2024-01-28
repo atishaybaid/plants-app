@@ -1,15 +1,19 @@
-import { useEffect, useState } from "react";
+/*eslint-disable*/
+import { useContext, useEffect, useState } from "react";
 import { fetchData } from "./Services/fetchData";
 import PlantCard from "./PlantCard";
 import PlantDetail from "./PlantDetail";
 import Loader from "./Loader";
 import Modal from 'react-modal';
+import { ThemeContext } from "./App";
 
 const PlantList = () => {
   const [plantListData, setPlantListData] = useState([]);
   const [plantListIsLoading, setPlantListIsLoading] = useState(false);
   const [isDetailsModalOpen, setIsDetailModalOpen] = useState(false);
   const [selectedPlant, setSelectedPLant] = useState("");
+  const { theme } = useContext(ThemeContext);
+
 
   useEffect(() => {
     setPlantListIsLoading(true)
@@ -74,3 +78,5 @@ const PlantList = () => {
 };
 
 export default PlantList;
+/*eslint-disable*/
+

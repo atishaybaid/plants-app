@@ -1,7 +1,6 @@
 import { getImagePath } from "./utils";
 import './PlantCard.css';
 import Carousel from "./components/Carousel";
-import CarouselItem from "./components/CarouselItem";
 
 const PlantCard = ({ plant, openModalClbck }) => {
   return (

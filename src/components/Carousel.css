@@ -1,20 +1,28 @@
 .carousel-wrapper {
     display: flex;
     width: 500px;
-    overflow: scroll;
+    overflow: hidden;
     position: relative;
 
 }
 
 .carousel-item {
     padding: 10px;
-    display: none;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Add transform */
+
 }
 
 .active {
-    display: block;
+    opacity: 1;
+    transform: translateX(0);
 }
 
+
+
+/* Style for icons */
 
 .slide-icon {
     width: 16px;

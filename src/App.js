@@ -7,35 +7,53 @@ import AppHeader from "./AppHeader";
 //@todo:atishay -> Make this a absolute  
 import SideDrawer from "./components/SideDrawer";
 import AddPlant from "./AddPlant.js"
+import { createContext } from 'react';
+
+
+
+const ThemeContext = createContext(null);
+
+
+
 
 
 function App() {
   const [isSidedrawerOpen, setSideDrawerOpen] = useState(false);
+  const [theme, setTheme] = useState("light");
+
+  const updateTheme = (updatedTheme) => {
+    setTheme(updatedTheme);
+
+  }
+
+
   return (
-    <div className="App">
-      <header>
-        <AppHeader onClickAddPlant={() => {
-          setSideDrawerOpen(true)
-        }} />
-      </header>
-      <div className="plant-list-container">
-        <PlantList />
+    <ThemeContext.Provider value={{ theme: theme, updateTheme: updateTheme }}>
+      <div className="App">
+        <header>
+          <AppHeader onClickAddPlant={() => {
+            setSideDrawerOpen(true)
+          }} />
+        </header>
+        <div className="plant-list-container">
+          <PlantList />
+        </div>
+        <SideDrawer open={isSidedrawerOpen} onCloseDrawer={() => {
+          setSideDrawerOpen(false)
+        }}>
+          <h1>
+            Side Drawer will be rendered
+          </h1>
+          <AddPlant />
+
+
+        </SideDrawer>
       </div>
-      <SideDrawer open={isSidedrawerOpen} onCloseDrawer={() => {
-        setSideDrawerOpen(false)
-      }}>
-        <h1>
-          Side Drawer will be rendered
-        </h1>
-        <AddPlant />
-
-
-      </SideDrawer>
-    </div>
+    </ThemeContext.Provider>
   );
 }
 
-export default App;
+export { App, ThemeContext };
 
 
 
