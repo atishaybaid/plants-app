@@ -2,7 +2,7 @@ import FormInput from "./components/FormInput"
 import Button from "./components/Button";
 import FileUpload from "./components/FileInput";
 import Select from "./components/Select";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 
 const AddPlant = ({ }) => {
     const plantNameRef = useRef(null);
@@ -130,4 +130,4 @@ const AddPlant = ({ }) => {
 
 
 
-export default AddPlant;
+export default memo(AddPlant);

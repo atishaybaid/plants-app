@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import "./SideDrawer.css"
 
 const SideDrawer = ({ children, open, onCloseDrawer }) => {
@@ -36,5 +36,5 @@ const SideDrawer = ({ children, open, onCloseDrawer }) => {
     )
 }
 
-
-export default SideDrawer;
+//export default SideDrawer;
+export default memo(SideDrawer);

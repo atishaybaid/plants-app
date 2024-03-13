@@ -1,10 +1,11 @@
 /*eslint-disable*/
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, memo } from "react";
 import { fetchData } from "./Services/fetchData";
 import PlantCard from "./PlantCard";
 import PlantDetail from "./PlantDetail";
 import Loader from "./Loader";
 import Modal from 'react-modal';
+import CustomMemo from "./components/CustomMemo";
 import { ThemeContext } from "./App";
 
 const PlantList = () => {
@@ -12,7 +13,7 @@ const PlantList = () => {
   const [plantListIsLoading, setPlantListIsLoading] = useState(false);
   const [isDetailsModalOpen, setIsDetailModalOpen] = useState(false);
   const [selectedPlant, setSelectedPLant] = useState("");
-  const { theme } = useContext(ThemeContext);
+  //const { theme } = useContext(ThemeContext);
 
 
   useEffect(() => {
@@ -77,6 +78,8 @@ const PlantList = () => {
   </div>;
 };
 
-export default PlantList;
+//export default memo(PlantList);
+//export default PlantList;
+export default CustomMemo(PlantList);
 /*eslint-disable*/
 
